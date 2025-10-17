@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emergency Hotline</title>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+ 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<script src="app.js"defer></script>
+  <style>
+    
+    .hero-gradient {
+      background: linear-gradient(135deg, #0f5504 0%, #1aac32 100%);
+    }
+
+    .card-gradient {
+      background: linear-gradient(135deg, #f3f6f4 0%, #e5ebe5 100%);
+    }
+
+    .pulse-animation {
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    .fade-in {
+      animation: fadeIn 0.5s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body class="bg-gray-50 min-h-screen flex flex-col">
+ 
+  <nav class="bg-white shadow-md py-3 px-6 flex justify-between items-center">
+    <div class="flex items-center py-3 px-6  w-28 gap-1">
+      <img src="B12-A5-Emergency-Hotline/assets/logo.png" alt="">
+      <span class="text-xl font-bold text-green-600">Emergency <br> Services</span>
+    </div>
+    <div class="flex items-center space-x-3 ">
+      <div class="flex items-center bg-green-100  text-black px-4 py-2 rounded-3xl">
+      
+        <span id="heartCount" class="font-semibold">0</span>
+         <i class="fas fa-heart text-red-500 mr-2"></i>
+      </div>
+      <div class="flex items-center bg-green-100  text-black px-4 py-2 rounded-3xl">
+        <i class="fas fa-coins text-yellow-500 mr-1 "></i>
+        <span id="coinCount" class="font-semibold ">100</span>
+      </div>
+      <div class="flex items-center bg-green-600  text-white px-4 py-2 rounded-3xl">
+        <i class=" text-white mr-1 "> Copy</i>
+        <span id="copyCount" class="font-semibold ">0</span>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero-gradient text-white py-16 text-center width-full mb-8 w-100 h-50">
+    <div class="container mx-auto px-4 w-40">
+     <img src="B12-A5-Emergency-Hotline/assets/logo-dark.png" alt="">
+     </div>
+     <div>
+      <h1 class="text-4xl font-bold mb-4">Emergency Hotline Services</h1>
+      <p class="text-xl opacity-90">Govirnment Emergency Service at your Fingertip - A project By Government Of The Peoples Republic Bnagladesh.</p>
+    </div>
+    
+  </section>
+
+  <main class="container mx-auto px-1 py-2 flex-grow">
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+
+      <div class="lg:col-span-3">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4" id="hotlineCards">
+          
+        </div>
+      </div>
+
+
+
+
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <div class="flex justify-between items-center mb-6">
+          <div class="flex items-center">
+            <i class="fas fa-history text-blue-600 mr-2"></i>
+            <h2 class="text-xl font-bold">Call History</h2>
+          </div>
+          <button id="clearHistory" class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg transition-colors text-xl">
+            Clear 
+          </button>
+        </div>
+        <div id="callHistory" class="space-y-4">
+         
+          <p class="text-gray-500 text-center py-4">No call history yet</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+
+  <footer class="bg-green-800 text-white py-6 text-center mt-8">
+    <p>© 2023 Emergency Hotline Service. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
