@@ -1,11 +1,12 @@
+localStorage.removeItem('hotlineApp');  
 
 const hotlineServices = [
-  { id: 1, icon: 'B12-A5-Emergency-Hotline/assets/ambulance.png', name: 'জরুরী অ্যাম্বুলেন্স', nameEn: 'Emergency Ambulance', number: '199', category: 'Medical' },
-  { id: 2, icon: 'B12-A5-Emergency-Hotline/assets/fire-service.png', name: 'অগ্নি নির্বাপন', nameEn: 'Fire Service', number: '161', category: 'Emergency' },
-  { id: 3, icon: 'B12-A5-Emergency-Hotline/assets/police.png', name: 'পুলিশ', nameEn: 'Police', number: '999', category: 'Security' },
-  { id: 4, icon: 'B12-A5-Emergency-Hotline/assets/emergency.png', name: 'হেল্পলাইন', nameEn: 'Health Helpline', number: '162', category: 'Medical' },
-  { id: 5, icon: 'B12-A5-Emergency-Hotline/assets/brac.png', name: 'শিশু সহায়তা', nameEn: 'Child Support', number: '1098', category: 'Support' },
-  { id: 6, icon: 'B12-A5-Emergency-Hotline/assets/logo.png', name: 'জাতীয় হেল্পলাইন', nameEn: 'National Helpline', number: '333', category: 'General' }
+  { id: 1, icon: 'B12-A5-Emergency-Hotline/assets/ambulance.png', name: 'Emergency Ambulance', nameEn: 'Emergency Ambulance', number: '199', category: 'Medical' },
+  { id: 2, icon: 'B12-A5-Emergency-Hotline/assets/fire-service.png', name: 'Fire Service', nameEn: 'Fire Service', number: '161', category: 'Emergency' },
+  { id: 3, icon: 'B12-A5-Emergency-Hotline/assets/police.png', name: 'Police', nameEn: 'Police', number: '999', category: 'Security' },
+  { id: 4, icon: 'B12-A5-Emergency-Hotline/assets/emergency.png', name: 'Health Helpline', nameEn: 'Health Helpline', number: '162', category: 'Medical' },
+  { id: 5, icon: 'B12-A5-Emergency-Hotline/assets/brac.png', name: 'Child Support', nameEn: 'Child Support', number: '1098', category: 'Support' },
+  { id: 6, icon: 'B12-A5-Emergency-Hotline/assets/logo.png', name: 'National Helpline', nameEn: 'National Helpline', number: '333', category: 'General' }
 ];
 
 
@@ -62,7 +63,7 @@ function renderHotlineCards() {
         <h3 class="text-xl font-bold mb-2">${s.name}</h3>
         <p class="text-gray-600 mb-1">${s.nameEn}</p>
         <p class="text-2xl font-bold text-blue-600 mb-4">${s.number}</p>
-       <button class="text-blue-800 text-xs gap-2 px-2 py-0.5  rounded">${s.category}
+       <button class="text-blue-800 text-xs gap-2 px-2 py-1 mb-2 bg-gray-100 rounded">${s.category}
         <div class="flex justify-between items-center">
         </button>
       
@@ -179,14 +180,12 @@ function saveState() {
 
 function loadState() {
   const saved = localStorage.getItem('hotlineApp');
-  if (saved) state = JSON.parse(saved);
- 
-  
-
- else state = { heartCount : 0, coinCount : 100, copyCount :0, callHistory : []}
- updateUI();
+  if (saved) {
+    state = JSON.parse(saved);
+  } else {
+    state = { heartCount: 0, coinCount: 100, copyCount: 0, callHistory: [] };
+  }
 }
-
 
 
 
